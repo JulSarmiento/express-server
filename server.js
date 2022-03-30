@@ -2,9 +2,18 @@
 const express = require('express');
 const app = express();
 
+// import the routes
 const routes = require('./routes');
 
-app.use(routes);
+// Parse data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// call the html
+app.use(express.static('public'));
+
+// product`s routes
+app.use('/api', routes);
 
 const PATH = process.env.PORT || 8080
 

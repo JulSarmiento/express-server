@@ -1,7 +1,7 @@
 [
   {
     "title": "Collar Elegant",
-    "price": 152000,
+    "price": 300000,
     "thumbnail": "https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/products%2Fcollar-elegant%2Fcollar-elegant-ambar-back.jpg?alt=media&token=8985f23e-b5f3-4a34-a388-cef4ed8abb4d",
     "id": 1
   },
@@ -21,12 +21,6 @@
     "title": "Collar Elegant",
     "price": 152000,
     "thumbnail": "https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/products%2Fcollar-elegant%2Fcollar-elegant-ambar-back.jpg?alt=media&token=8985f23e-b5f3-4a34-a388-cef4ed8abb4d",
-    "id": 4
-  },
-  {
-    "title": "Collar Elegant",
-    "price": 152000,
-    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/products%2Fcollar-elegant%2Fcollar-elegant-ambar-back.jpg?alt=media&token=8985f23e-b5f3-4a34-a388-cef4ed8abb4d",
     "id": 5
   },
   {
@@ -40,5 +34,40 @@
     "price": 152000,
     "thumbnail": "https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/products%2Fcollar-elegant%2Fcollar-elegant-ambar-back.jpg?alt=media&token=8985f23e-b5f3-4a34-a388-cef4ed8abb4d",
     "id": 7
+  },
+  {
+    "title": "Collar Elegant",
+    "price": 152000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/products%2Fcollar-elegant%2Fcollar-elegant-ambar-back.jpg?alt=media&token=8985f23e-b5f3-4a34-a388-cef4ed8abb4d",
+    "id": 8
+  },
+  {
+    "title": "Collar Elegant",
+    "price": 152000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/products%2Fcollar-elegant%2Fcollar-elegant-ambar-back.jpg?alt=media&token=8985f23e-b5f3-4a34-a388-cef4ed8abb4d",
+    "id": 9
+  },
+  {
+    "title": "Collar Elegant",
+    "price": 152000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/products%2Fcollar-elegant%2Fcollar-elegant-ambar-back.jpg?alt=media&token=8985f23e-b5f3-4a34-a388-cef4ed8abb4d",
+    "id": 10
+  },
+  {
+    "title": "Collar Elegant",
+    "price": 152000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/products%2Fcollar-elegant%2Fcollar-elegant-ambar-back.jpg?alt=media&token=8985f23e-b5f3-4a34-a388-cef4ed8abb4d",
+    "id": 11
+  },
+  {
+    "title": "Collar Elegant",
+    "price": 152000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/mazu-store.appspot.com/o/products%2Fcollar-elegant%2Fcollar-elegant-ambar-back.jpg?alt=media&token=8985f23e-b5f3-4a34-a388-cef4ed8abb4d",
+    "id": 12
+  },
+  {
+    "productName": "Collar Elegante",
+    "productPrice": "152000",
+    "id": 13
   }
 ]

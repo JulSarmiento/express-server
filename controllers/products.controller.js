@@ -5,28 +5,47 @@ const db = 'products';
 
 const product = new Container(db);
 
-exports.save = async function(req, res) {
+// add new product
+exports.save = async function(req, res, next) {
   res.json(await product.save(req.body));
 }
 
-exports.getAll = async function(req, res) {
+// return all products
+exports.getAll = async function(req, res, next) {
   res.json(await product.getAll());
 }
 
-exports.getById = async function(req, res){
-  res.json(await product.getById(req.param.id));
+// return one product by its id
+exports.getById = async function(req, res, next){
+  const {id} = req.params
+
+  const current = await product.getById(id);
+  if (current) {
+    return res.json(current);
+  }
+  res.status(400).json({error: `El producto con id ${id} no existe`})
 }
 
-exports.getRandom = async function(req, res){
+// return a random product
+exports.getRandom = async function(req, res, next){
   res.json(await product.getRandom());  
 }
 
-exports.deleteAll = async function(req, res) {
+// update an existen product
+exports.update = async function(req, res, next){
+  const {id} = req.params;
+  res.json(await product.update(id, req.body));
+}
+
+// delete all the products
+exports.deleteAll = async function(req, res, next) {
   res.json(await product.deleteAll());
 }
 
-exports.deleteById = async function(req, res){
-  res.json(await product.deleteById(req.param.id));
+// delete an existen product by its id
+exports.deleteById = async function(req, res, next){
+  const {id} = req.params;  
+  res.json(await product.deleteById(id));
 }
 
 

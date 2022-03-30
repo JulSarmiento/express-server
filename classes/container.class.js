@@ -27,7 +27,7 @@ class Container{
 
       saveFile(this._filename, array)
       
-      return data.id
+      return data
 
     } catch (err) {
       console.log(`No fue posible agregar el producto, ${err} `);
@@ -46,7 +46,7 @@ class Container{
     try{
       const array = await readFile(this._filename);
 
-      return array.find(Element => Element.id === id) ;
+      return array.find(Element => Element.id === Number(id)) ;
 
     } catch (err){
       console.log(err);
@@ -75,6 +75,28 @@ class Container{
     return this.getById(random);
   }
 
+  /**
+   * This function updates an existent product in the array
+   * 
+   * @param {number} id 
+   * @param {object} data 
+   * @returns the updated product`s array
+   */
+  async update(id, data){
+
+    const array = await readFile(this._filename);
+
+    const current = array.find(item => item.id === Number(id));
+
+    const currentIndex = array.indexOf(current);
+
+    array[currentIndex] = {...current, ...data};
+
+    saveFile(this._filename, array);
+    
+    return array[currentIndex];
+  }
+
 
   /**
    * Delete elemet by Id
@@ -85,7 +107,7 @@ class Container{
 
     const array = await readFile(this._filename);
     
-    saveFile(this._filename, array.filter(el => el.id !== id))
+    saveFile(this._filename, array.filter(el => el.id !== Number(id)))
   }
 
 
