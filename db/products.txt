@@ -1,38 +1,20 @@
 [
   {
     "productName": "Collar Elegante",
-    "productPrice": "152000",
-    "thumbnail": "public\\uploads\\1648743337411-argentinian_dogo.png",
-    "id": 1
-  },
-  {
-    "productName": "Habi",
-    "productPrice": "2432342424",
-    "thumbnail": "public\\uploads\\1648743444497-bernese_mountain_dog.png",
+    "productPrice": "200000",
+    "thumbnail": "/uploads/1648757666594-belgian_shepherd_malinois.png",
     "id": 2
   },
   {
     "productName": "Collar Elegante",
-    "productPrice": "152000",
-    "thumbnail": "public/uploads",
+    "productPrice": "200000",
+    "thumbnail": "/uploads/1648757667435-belgian_shepherd_malinois.png",
     "id": 3
   },
   {
     "productName": "Collar Elegante",
-    "productPrice": "152000",
-    "thumbnail": "public/uploads/1648743655392-argentinian_dogo.png",
+    "productPrice": "200000",
+    "thumbnail": "/uploads/1648757668163-belgian_shepherd_malinois.png",
     "id": 4
-  },
-  {
-    "productName": "Collar Elegante",
-    "productPrice": "152000",
-    "thumbnail": "/public/uploads/1648743667547-argentinian_dogo.png",
-    "id": 5
-  },
-  {
-    "productName": "Collar Elegante",
-    "productPrice": "152000",
-    "thumbnail": "/uploads/1648743789526-argentinian_dogo.png",
-    "id": 6
   }
 ]
