@@ -27,7 +27,7 @@ router.get('/productos/:id', containerFunctions.getById);
 /**
  * This save a new product 
  */
-router.post('/productos', multerMiddleware.single('productPicture') ,containerFunctions.save);
+router.post('/productos', multerMiddleware.single('thumbnail') ,containerFunctions.save);
 
 /**
  * This update an existent product 

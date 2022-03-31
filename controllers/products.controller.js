@@ -6,8 +6,16 @@ const db = 'products';
 const product = new Container(db);
 
 // add new product
-exports.save = async function(req, res, next) {
-  res.json(await product.save(req.body));
+exports.save = async function(req, res) {
+
+  if(req.file){
+    const thumbnail = `/uploads/${req.file.filename}`;
+
+    return res.json(await product.save({...req.body, thumbnail}));
+  }
+
+  res.end('mising file')
+
 }
 
 // return all products
