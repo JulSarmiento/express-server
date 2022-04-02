@@ -49,7 +49,7 @@ class Container{
       return array.find(Element => Element.id === Number(id)) ;
 
     } catch (err){
-      console.log(err);
+      console.log({err: 'producto no encontrado'});
     }
 
   }

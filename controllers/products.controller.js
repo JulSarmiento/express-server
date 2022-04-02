@@ -10,12 +10,8 @@ exports.save = async function(req, res) {
 
   if(req.file){
     const thumbnail = `/uploads/${req.file.filename}`;
-
     return res.json(await product.save({...req.body, thumbnail}));
   }
-
-  res.end('mising file')
-
 }
 
 // return all products
@@ -25,13 +21,7 @@ exports.getAll = async function(req, res) {
 
 // return one product by its id
 exports.getById = async function(req, res){
-  const {id} = req.params
-
-  const current = await product.getById(id);
-  if (current) {
-    return res.json(current);
-  }
-  res.status(400).json({error: `El producto con id ${id} no existe`})
+  return res.json(req.product);
 }
 
 // return a random product
@@ -42,7 +32,8 @@ exports.getRandom = async function(req, res){
 // update an existen product
 exports.update = async function(req, res){
   console.log('body',req.body);
-  console.log('file',req.file)  
+  console.log('file',req.file);
+   
   if(req.file){
     req.body.thumbnail = `/uploads/${req.file.filename}`
   } 
