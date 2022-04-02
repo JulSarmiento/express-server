@@ -1,14 +1,8 @@
 [
   {
-    "productName": "Collar Elegante",
-    "productPrice": "200000",
-    "thumbnail": "/uploads/1648757666594-belgian_shepherd_malinois.png",
-    "id": 2
-  },
-  {
-    "productName": "Collar Elegante",
-    "productPrice": "200000",
-    "thumbnail": "/uploads/1648757667435-belgian_shepherd_malinois.png",
+    "productName": "Collar Ellegant",
+    "productPrice": "10",
+    "thumbnail": "/uploads/1648941605882-cavalier_king_charles_spaniel.png",
     "id": 3
   },
   {
@@ -16,5 +10,34 @@
     "productPrice": "200000",
     "thumbnail": "/uploads/1648757668163-belgian_shepherd_malinois.png",
     "id": 4
+  },
+  {
+    "productName": "Collar Ellegant",
+    "productPrice": "200000",
+    "thumbnail": "/uploads/1648941389847-brussels_griffon.png",
+    "id": 5
+  },
+  {
+    "productName": "Collar Ellegant",
+    "productPrice": "200000",
+    "id": 6
+  },
+  {
+    "productName": "Collar Ellegant",
+    "productPrice": "200000",
+    "thumbnail": "/uploads/1648941475855-brussels_griffon.png",
+    "id": 7
+  },
+  {
+    "productName": "Collar Ellegant",
+    "productPrice": "200000",
+    "thumbnail": "1648941475855-brussels_griffon.png",
+    "id": 8
+  },
+  {
+    "productName": "Collar Ellegant",
+    "productPrice": "200000",
+    "thumbnail": "/uploads/1648941562684-cavalier_king_charles_spaniel.png",
+    "id": 9
   }
 ]

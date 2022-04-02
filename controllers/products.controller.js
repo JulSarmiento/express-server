@@ -7,11 +7,14 @@ const product = new Container(db);
 
 // add new product
 exports.save = async function(req, res) {
+  
+  let {thumbnail} = req.body;
 
   if(req.file){
-    const thumbnail = `/uploads/${req.file.filename}`;
-    return res.json(await product.save({...req.body, thumbnail}));
+    thumbnail = `/uploads/${req.file.filename}`;
   }
+
+  res.json(await product.save({...req.body, thumbnail}));
 }
 
 // return all products
