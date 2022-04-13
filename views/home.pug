@@ -2,110 +2,31 @@ extends layouts/index.pug
 
 block home
 
-  style
-
-    .main
-      text-align: justify
-    
-      .main__tittle
-        text-decoration: underline
-        color: rgb(223, 127, 120)
-        font-size: 25px
-      
-      .main__form
-        margin-left: 20px
-    
-        .main__form--inputs
-          margin: 15px 0
-          display: grid
-          grid-template-columns: auto auto
-          gap: 20px
-          padding: 10px
-      
-          label
-            border-bottom: 1px solid rgb(223, 127, 120)
-            font-size: 20px
-      
-          .input
-            border: 1px solid rgb(223, 127, 120)
-            border-radius: 10px
-            padding: 10px
-          
-        .main__form--btns
-          margin: 15px 0
-          display: grid
-          grid-template-columns: auto 
-          gap: 20px
-
-          button 
-            background-color: rgb(223, 127, 120) 
-            color: #ffffff
-            border: none
-            height: 25px
-            border-radius: 10px
-        
-        .main__form--inputs
-          margin: 15px 0
-          display: grid
-          grid-template-columns: auto auto
-          gap: 20px
-
-    .table td
-      vertical-align: middle
-    
-    .table th 
-      vertical-align: middle
-    
-    .table--mod
-      box-shadow: 0px 4px 25px 1px #DFC7C4
-    
-    h1 
-      text-decoration: overline
-      color: rgb(223, 127, 120)
-      font-size: 30px
-      margin-bottom: 20px
-
-    td 
-      margin-left: 10px
-
-    tr 
-      background-color: #ddd
-    
-    .jumbotron 
-      min-height: 100vh
-      margin: 10px  auto
-      background-color: #ffffff
-    
-    a
-      background-color: rgb(223, 127, 120) 
-      color: #efefefe
-
-          
   main(class="main")
 
     h2(class="main__tittle")="Agregar Productos"
 
-    form(class="main__form" action='/' method='POST' enctype='multipart/form-data')
+      form(class="main__form" id="products-form" action='/' method='POST' enctype='multipart/form-data')
 
-      div(class="main__form--inputs")
-        label(for='productName')="Nombre del producto:"
-        input(class="input" id="productName" type='text' name='productName')
+        div(class="form-group")
+          label(for='productName')="Nombre del producto:"
+          input(id="productName" name="productName" class="form-control" type='text' required)
 
-      div(class="main__form--inputs")
-        label(for='productPrice')="Precio del producto:"
-        input(class="input" id="productPrice" type='number' name='productPrice')
+        div(class="form-group")
+          label(for='productPrice')="Precio del producto"
+          input(id="#productPrice" name="productPrice" class="form-control" type='number' required)
 
-      div(class="main__form--inputs")
-        label(for='thumbnail')="Foto del producto"
-        input(class="input" id="thumbnail" type='file' name='thumbnail')
-
-      div(class="main__form--btns")
-        button(type='submit')="Enviar"
-        button(type='reset')="Limpiar" 
+        div(class="custom-file")
+          input(id="#thumbnail" class="custom-file-input" name='thumbnail' type='file')
+          label(class="custom-file-label" for='thumbnail')="Foto del producto."
+      
+        button(class="btn btn-primary my-3" type='submit')="Enviar"
 
   section(class="jumbotron")
 
-    h1= 'Vista de Productos'
+    h2= 'Vista de Productos'
+
+    div(id="result-table")
 
     //- if products.length > 0
 

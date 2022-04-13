@@ -1,6 +1,12 @@
 // AQUI VA LA APP DE EXPRESS
 const express = require('express');
+
+const {Server: IOServer} = require('socket.io');
+const {Server: HttpServer} = require('http');
+
 const app = express();
+const httpServer = new HttpServer(app);
+const io = new IOServer(httpServer);
 
 // import the routes
 const routes = require('../routes');
@@ -14,20 +20,26 @@ app.set("view engine", "pug");
 app.set('views', './views');
 
 // call the html
-app.use(express.static('public'));
+app.use(express.static('./public'));
 
 // Setting the homepage
 app.get('/', (req, res) => {
   res.render('home');
 });
 
+io.on('connection', function(socket) {
+  console.log('Un cliente se ha conectado');
+  // socket.emit('products', products);
+
+  // socket.on('new-message', message => {
+  //   messages.push(message);
+  //   io.sockets.emit('messages', messages);
+  // })
+});
+
 // product`s routes
 app.use('/api', routes);
 
-const PATH = process.env.PORT || 8080
+// const PATH = process.env.PORT || 8080
 
-const server = app.listen(PATH, () => {
-  console.log(`El servidor HTTP en el puerto ${PATH} funcionando correctamente.`);
-});
-
-server.on('error', error => console.log(`Error en el servidor ${error}.`));
+httpServer.listen(8080, () => console.log('SERVER ON'));
