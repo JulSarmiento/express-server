@@ -39,5 +39,40 @@
     "productPrice": "200000",
     "thumbnail": "/uploads/1648941562684-cavalier_king_charles_spaniel.png",
     "id": 9
+  },
+  {
+    "productName": "Collar Ligth",
+    "productPrice": "125000",
+    "id": 10
+  },
+  {
+    "productName": "Collar Ligth",
+    "productPrice": "125000",
+    "thumbnail": "/uploads/1649950273805-collar-elegant-lightBlue-back.jpg",
+    "id": 11
+  },
+  {
+    "productName": "Habi",
+    "productPrice": "123456",
+    "thumbnail": "/uploads/1649950749860-collar-elegant-lightBlue-front.jpg",
+    "id": 12
+  },
+  {
+    "productName": "Habi",
+    "productPrice": "123456",
+    "thumbnail": "/uploads/1649950752530-collar-elegant-lightBlue-front.jpg",
+    "id": 13
+  },
+  {
+    "productName": "Collar Ligth",
+    "productPrice": "123456",
+    "thumbnail": "/uploads/1649950921670-collar-elegant-lightBlue-detail.jpg",
+    "id": 14
+  },
+  {
+    "productName": "habi",
+    "productPrice": "125200",
+    "thumbnail": "/uploads/1649951061451-collar-light-lapizLazuli-front.jpg",
+    "id": 15
   }
 ]

@@ -14,7 +14,14 @@ exports.save = async function(req, res) {
     thumbnail = `/uploads/${req.file.filename}`;
   }
 
-  res.json(await product.save({...req.body, thumbnail}));
+  const created = await product.save({...req.body, thumbnail});
+
+  const socket = req.app.get('socketio');
+
+  const products = await product.getAll();
+  socket.emit('products', products);
+
+  res.json(created);
 }
 
 // return all products

@@ -1,7 +1,7 @@
 // AQUI VA LA APP DE EXPRESS
 const express = require('express');
 
-const {Server: IOServer} = require('socket.io');
+const {Server: IOServer, Socket} = require('socket.io');
 const {Server: HttpServer} = require('http');
 
 const app = express();
@@ -10,6 +10,9 @@ const io = new IOServer(httpServer);
 
 // import the routes
 const routes = require('../routes');
+
+// import socket function
+const productSockets = require('../sockets/product.socket');
 
 // Parse data
 app.use(express.json());
@@ -27,15 +30,9 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
-io.on('connection', function(socket) {
-  console.log('Un cliente se ha conectado');
-  // socket.emit('products', products);
+io.on('connection', productSockets);
 
-  // socket.on('new-message', message => {
-  //   messages.push(message);
-  //   io.sockets.emit('messages', messages);
-  // })
-});
+app.set('socketio', io);
 
 // product`s routes
 app.use('/api', routes);
@@ -43,3 +40,5 @@ app.use('/api', routes);
 // const PATH = process.env.PORT || 8080
 
 httpServer.listen(8080, () => console.log('SERVER ON'));
+
+module.exports = io
