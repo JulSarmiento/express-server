@@ -1,0 +1,115 @@
+body {
+    margin: 5% 10%;
+
+}
+
+.products__title{
+    color: rgb(197, 126, 126);
+    text-decoration: underline rgb(197, 126, 126);
+    text-align: center;
+}
+
+.main{
+    box-shadow: -2px -1px 13px 7px rgba(247,198,173,0.49);
+    margin-bottom: 20px;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.main__title{
+    margin-bottom: 10px;
+    color: rgb(197, 126, 126);
+}
+
+form{
+    margin-top: 10px;
+    margin: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+.form-group{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.form-group input{
+    border: 1px solid rgb(197, 126, 126);
+}
+
+.form-group input:hover{
+    box-shadow: -2px -1px 13px 7px rgba(247,198,173,0.49);
+}
+
+.btn--mod {
+    box-shadow: -2px -1px 13px 7px rgba(247,198,173,0.49);
+    background-color: white;
+    margin: 10px 5px;
+}
+
+a.btn--mod:hover{
+    background-color: rgb(197, 126, 126);
+    color: white;
+}
+
+button.btn{
+    box-shadow: -2px -1px 13px 7px rgba(247,198,173,0.49);
+    background-color: white;
+}
+
+button.btn:hover{
+    background-color: rgb(197, 126, 126);
+    color: white;
+}
+
+.table-responsive{
+    border-radius: 10px;
+}
+
+.table--mod{
+    background-color: rgb(226, 182, 182)
+}
+
+.table--mod th{
+    color: white;
+}
+
+#message-box{
+    box-shadow: -2px -1px 13px 7px rgba(247,198,173,0.49);
+    margin-bottom: 20px;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+#message-box p{
+    margin: 10px;
+    border-bottom: 1px solid rgb(199, 167, 167);
+}
+
+.user-message{
+    list-style: none;
+    background-color: rgb(243, 239, 239);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.message__title{
+    list-style: none;
+    display: flex;
+}
+
+.message-item--one{
+ color: blue;   
+}
+
+.message-item--two{
+    color: brown;   
+}
+
+.message-item--three{
+    color: green;
+}

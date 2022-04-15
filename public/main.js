@@ -51,7 +51,14 @@ window.addEventListener('load', () => {
     messages.forEach(message => {
       messageBox.insertAdjacentHTML('beforeEnd', 
       `
-        <p>${message.email}(${message.date}): ${message.text}</p>
+        <ul class="user-message">
+        <div class="message__title">
+          <li class="message-item--one"><strong>${message.email}</strong></li>
+          <li class="message-item--two">(${message.date}):</li>
+        </div>
+
+          <li class="message-item--three"> <em>"${message.text}"</em></li>
+        </ul>
       `
     )})
 

@@ -2,37 +2,35 @@ extends layouts/index.pug
 
 block home
 
-  h1="Mazuzoe for Fancy Pets"
+  main(class="main")
 
-  main(class="main jumbotron")
+    h2(class="main__title")="Agregar Productos"
 
-    h2(class="main__tittle")="Agregar Productos"
+    form(class="main__form" id="products-form" action='/' method='POST' enctype='multipart/form-data')
 
-      form(class="main__form" id="products-form" action='/' method='POST' enctype='multipart/form-data')
+      div(class="form-group")
+        label(for='productName')="Nombre del producto:"
+        input(id="productName" name="productName" class="form-control" type='text' required)
 
-        div(class="form-group")
-          label(for='productName')="Nombre del producto:"
-          input(id="productName" name="productName" class="form-control" type='text' required)
+      div(class="form-group")
+        label(for='productPrice')="Precio del producto"
+        input(id="#productPrice" name="productPrice" class="form-control" type='number' required)
 
-        div(class="form-group")
-          label(for='productPrice')="Precio del producto"
-          input(id="#productPrice" name="productPrice" class="form-control" type='number' required)
+      div(class="custom-file form-group")
+        label(class="custom-file-label" for='thumbnail')="Foto del producto:"
+        input(id="thumbnail" name="thumbnail" type="file")
+         
+      button(class="btn my-3" type='submit')="Enviar"
 
-        div(class="custom-file")
-          input(id="thumbnail" class="custom-file-input" name='thumbnail' type='file')
-          label(class="custom-file-label" for='thumbnail')="Foto del producto."
-      
-        button(class="btn btn-primary my-3" type='submit')="Enviar"
+    section(class="")
 
-    section(class="jumbotron")
-
-      h2= 'Vista de Productos'
+      h2(class="main__title")= 'Vista de Productos'
 
       div(id="product-table")
 
-  section 
+  section(class="main") 
 
-    h2(class="main__tittle")="Dejanos tus comentarios:"
+    h2(class="main__title")="Dejanos tus comentarios:"
 
     div(id="message-box")
 
@@ -46,6 +44,6 @@ block home
         label(for='text')="Cuentanos algo:"
         input(id="text" name="text" class="form-control" type='text' required)
 
-      button(class="btn btn-primary my-3" type='submit')="Enviar"
+      button(class="btn " type='submit')="Enviar"
 
 

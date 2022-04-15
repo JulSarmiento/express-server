@@ -34,5 +34,11 @@
     "text": "Haciendo pruebas antes de arreglar estilos",
     "date": "Fri Apr 15 2022",
     "id": 6
+  },
+  {
+    "email": "vader@gmail.com",
+    "text": "Odio a habi por intentar robarse a mi mami",
+    "date": "Fri Apr 15 2022",
+    "id": 7
   }
 ]
