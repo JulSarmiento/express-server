@@ -28,5 +28,11 @@
     "text": "quiero galletas",
     "date": "Thu Apr 14 2022",
     "id": 5
+  },
+  {
+    "email": "maroonedorange@hotmail.com",
+    "text": "Haciendo pruebas antes de arreglar estilos",
+    "date": "Fri Apr 15 2022",
+    "id": 6
   }
 ]
