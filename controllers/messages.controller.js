@@ -8,7 +8,7 @@ const message = new Container(db);
 // add new message
 exports.save = async function(req, res) {
 
-  const body = {...req.body, date: new Date().toDateString()}
+  const body = {...req.body, date: new Date().toLocaleString('es-CO')}
 
   const created = await message.save(body);
 
