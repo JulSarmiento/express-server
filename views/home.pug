@@ -2,7 +2,9 @@ extends layouts/index.pug
 
 block home
 
-  main(class="main")
+  h1="Mazuzoe for Fancy Pets"
+
+  main(class="main jumbotron")
 
     h2(class="main__tittle")="Agregar Productos"
 
@@ -17,17 +19,33 @@ block home
           input(id="#productPrice" name="productPrice" class="form-control" type='number' required)
 
         div(class="custom-file")
-          input(id="#thumbnail" class="custom-file-input" name='thumbnail' type='file')
+          input(id="thumbnail" class="custom-file-input" name='thumbnail' type='file')
           label(class="custom-file-label" for='thumbnail')="Foto del producto."
       
         button(class="btn btn-primary my-3" type='submit')="Enviar"
 
-  section(class="jumbotron")
+    section(class="jumbotron")
 
-    h2= 'Vista de Productos'
+      h2= 'Vista de Productos'
 
-    div(id="result-table")
+      div(id="product-table")
 
-    div(id="no-result-table")
+  section 
+
+    h2(class="main__tittle")="Dejanos tus comentarios:"
+
+    div(id="message-box")
+
+    form(class="messages-form" id="messages-form")
+
+      div(class="form-group")
+        label(for='email')="Correo electronico:"
+        input(id="email" name="email" class="form-control" type='email' required)
+
+      div(class="form-group")
+        label(for='text')="Cuentanos algo:"
+        input(id="text" name="text" class="form-control" type='text' required)
+
+      button(class="btn btn-primary my-3" type='submit')="Enviar"
 
 

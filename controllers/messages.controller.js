@@ -8,7 +8,9 @@ const message = new Container(db);
 // add new message
 exports.save = async function(req, res) {
 
-  const created = await message.save(req.body);
+  const body = {...req.body, date: new Date().toDateString()}
+
+  const created = await message.save(body);
 
   const socket = req.app.get('socketio');
 

@@ -15,8 +15,8 @@ const routes = require('../routes');
 const productSockets = require('../sockets/product.socket');
 
 // Parse data
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Setting the template, in this case: pug.
 app.set("view engine", "pug");
@@ -36,6 +36,7 @@ app.set('socketio', io);
 
 // product`s routes
 app.use('/api', routes);
+app.use('/templates', require('../routes/templates'));
 
 // const PATH = process.env.PORT || 8080
 

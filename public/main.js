@@ -2,56 +2,73 @@ window.addEventListener('load', () => {
 
   const socket = io.connect()
 
+  /**
+   * This function list and print all the products
+   * @param {array} products 
+   */
   function listProducts(products) {
 
     if(products.length > 0){
 
-      document.getElementById('result-table').innerHTML =
-      `
-        div(class="table-responsive")
-        table(class="table table-dark gap-5 table--mod")
+      fetch('/templates/tableTitle')
+        .then( async function (response) {
+          const html = await response.text()
+          const container = document.getElementById('product-table');
+
+          container.innerHTML = html;
+
+          const rows = container.querySelector('tbody');
+          products.forEach(product =>{
+
+            rows.insertAdjacentHTML('beforeEnd', `    
+              <tr class="text">
+                <td>${product.productName}</td>
+                <td>${new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(product.productPrice )}</td>
+                <td><img width="50" src="${product.thumbnail}" alt="not found"></td>
+              </tr>`)
   
-          tr
-            th='Nombre'
-            th='Precio'
-            th='foto'
-      `
-
-        products.map(product => {
-          `           
-            tr 
-            td=product.productName
-            td=new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(product.productPrice )   
-            td
-              img(width="50" src=product.thumbnail alt="not found")
-          `
+          })
         });
-
     }else {
 
-      document.getElementById('no-result-table').innerHTML = 
-      `
-        h3(class="alert alert-warning")='No se encontraron productos'
+      fetch('/templates/noTable')
+        .then(async function (response) {
+          const html = await response.text();
+          document.getElementById('product-table').innerHTML = html
+        })
 
-        a(href="/" type="button" class="btn btn-primary ")='Cargar un nuevo producto'
-      `
     }
+  }
 
+  /**
+   * This function list and print all the messages
+   * @param {array} messages 
+   */
+  function listMessages(messages){
+    const messageBox = document.getElementById('message-box');
+    messageBox.innerHTML = '';
+
+    messages.forEach(message => {
+      messageBox.insertAdjacentHTML('beforeEnd', 
+      `
+        <p>${message.email}(${message.date}): ${message.text}</p>
+      `
+    )})
 
   }
 
-
-
+  // SOCKETS
   socket.on('products', products => {
     console.log('Lista de productos: ', products)
     listProducts(products);
-  })
+  });
 
   socket.on('messages', messages => {
     console.log('Lista de mensajes: ', messages)
-    // render(data);
+    listMessages(messages);
   })
 
+  // PRODUCTS
   document.getElementById('products-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -67,9 +84,23 @@ window.addEventListener('load', () => {
       
   });
 
+  // MESSAGES
+  document.getElementById('messages-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
+    const messageForm = e.target;
+    const body = JSON.stringify(Object.fromEntries(new FormData(messageForm).entries()));
 
+    await fetch('/api/mensajes', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body
+    })
 
-  
+    messageForm.reset();
+  })
 
 })
